@@ -1,0 +1,54 @@
+# ===============================
+# Visual Studio / IDE
+# ===============================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+_ReSharper*/
+*.DotSettings.user
+
+# ===============================
+# Build outputs
+# ===============================
+bin/
+obj/
+TestResults/
+*.dll
+*.exe
+*.pdb
+*.cachefile
+
+# ===============================
+# ASP.NET / Web API
+# ===============================
+App_Data/
+*.dbschema
+.DbSchema/
+
+# EF Core migrations (keep folder, ignore temp files)
+Migrations/*.Designer.cs
+Migrations/*.Snapshot.cs
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Node / frontend (if any)
+node_modules/
+dist/
+build/
+npm-debug.log
+yarn-error.log
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+.env
