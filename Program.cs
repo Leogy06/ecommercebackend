@@ -8,6 +8,21 @@ Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
+var frontendUrl = builder.Configuration["FrontendUrl"] ?? Environment.GetEnvironmentVariable("FRONTEND_URL")!;
+
+Console.WriteLine("Frontend URL: " + frontendUrl);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowNextJs", policy =>
+    {
+        policy.WithOrigins(frontendUrl)
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -60,11 +75,15 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.UseCors("AllowNextJs");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+
 
 app.UseHttpsRedirection();
 

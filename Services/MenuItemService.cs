@@ -19,5 +19,7 @@ namespace EcommerceBackend.Services
             await _menuItems.InsertManyAsync(menuItems);
             return menuItems.ToList(); 
         }
+        public async Task<List<MenuItemModel>> GetAllAsync() =>
+            await _menuItems.Find(_ => true).ToListAsync();
     }
 }

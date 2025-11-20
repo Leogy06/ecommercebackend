@@ -21,5 +21,11 @@ namespace EcommerceBackend.Controllers
             var createdMenuItems = await _menuItemService.CreateAsync(menuItems);
             return Ok(createdMenuItems);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllMenuItems()
+        {
+            var menuItems = await _menuItemService.GetAllAsync();
+            return Ok(menuItems);
+        }
     }
 }

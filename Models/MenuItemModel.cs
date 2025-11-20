@@ -20,6 +20,7 @@ namespace EcommerceBackend.Models
         [BsonElement("description")]
         public string Description { get; set; } = "";
 
+        [BsonElement("category_id")]
         [BsonRepresentation(BsonType.ObjectId)]
         public string CategoryId { get; set; } = string.Empty;
 
