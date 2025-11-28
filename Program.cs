@@ -10,8 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var frontendUrl = builder.Configuration["FrontendUrl"] ?? Environment.GetEnvironmentVariable("FRONTEND_URL")!;
 
-Console.WriteLine("Frontend URL: " + frontendUrl);
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowNextJs", policy =>
