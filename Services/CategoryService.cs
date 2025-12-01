@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
 using EcommerceBackend.Models;
 using Microsoft.Extensions.Options;
+using System.Security.Cryptography.X509Certificates;
 
 namespace EcommerceBackend.Services
 {
@@ -19,5 +20,9 @@ namespace EcommerceBackend.Services
             await _categories.InsertManyAsync(categories);
             return categories.ToList();
         }
+        public async Task<List<CategoryModel>> GetAllAsync() =>
+                await _categories.Find(_ => true).ToListAsync();
+        
+       
     }
     }

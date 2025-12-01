@@ -22,9 +22,9 @@ namespace EcommerceBackend.Controllers
             return Ok(createdMenuItems);
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllMenuItems()
+        public async Task<IActionResult> GetAllMenuItems([FromQuery] string? categoryId)
         {
-            var menuItems = await _menuItemService.GetAllAsync();
+            var menuItems = await _menuItemService.GetAllAsync(categoryId);
             return Ok(menuItems);
         }
     }

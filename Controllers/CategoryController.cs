@@ -1,5 +1,6 @@
 ﻿using EcommerceBackend.Models;
 using EcommerceBackend.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceBackend.Controllers
@@ -21,5 +22,13 @@ namespace EcommerceBackend.Controllers
             var createdCategory = await _categoryService.CreateAsync(categoryName);
             return Ok(createdCategory);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCategories()
+        {
+            var categories = await _categoryService.GetAllAsync();
+            return Ok(categories);
+        }
+        
     }
 }

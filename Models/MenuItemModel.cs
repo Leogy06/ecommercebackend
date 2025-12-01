@@ -1,7 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using EcommerceBackend.Enums;
-using System.ComponentModel.DataAnnotations;
 
 
 namespace EcommerceBackend.Models

@@ -67,6 +67,8 @@ builder.Services.AddSingleton(sp =>
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<CategoryService>();
 builder.Services.AddSingleton<MenuItemService>();
+builder.Services.AddSingleton<OrderService>();
+
 
 // add controller
 builder.Services.AddControllers();

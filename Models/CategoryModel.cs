@@ -8,7 +8,8 @@ namespace EcommerceBackend.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
-        public string Name { get; set; } = "";
 
+        [BsonElement("Name")]
+        public string Name { get; set; } = "";
     }
 }
